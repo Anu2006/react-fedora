@@ -103,7 +103,7 @@ class Game extends React.Component {
     if (winner) {
       status = "Winner: " + winner;
     } else {
-      status = "Next player: " + (this.state.xIsNext ? "X" : "O");
+      status = "Next player: " + (this.state.xIsNext ? "Anu2006" : "Ranil");
     }
 
     return (
@@ -123,8 +123,6 @@ class Game extends React.Component {
   }
 }
 
-// ========================================
-
 ReactDOM.render(<Game />, document.getElementById("root"));
 
 function calculateWinner(squares) {
@@ -138,10 +136,12 @@ function calculateWinner(squares) {
     [0, 4, 8],
     [2, 4, 6]
   ];
+  const players = { A:'Anu2006', R:'Ranil'}
   for (let i = 0; i < lines.length; i++) {
     const [a, b, c] = lines[i];
     if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
-      return squares[a];
+      
+      return players[squares[a]];
     }
   }
   return false;
